@@ -1,0 +1,40 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, ul, ol, li, h1, h2, h3, h4, h5, h6, p, section, header, footer, nav, form, input, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto Condensed", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 游ゴシック体, "Yu Gothic", YuGothic, メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 62.5%;
+}
+
+li, ol {
+  list-style: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+.flex-box {
+  -ms-flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
