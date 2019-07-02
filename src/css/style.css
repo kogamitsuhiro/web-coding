@@ -52,6 +52,12 @@ header {
   padding: 10px;
 }
 
+@media (max-width: 768px) {
+  header {
+    background-color: red;
+  }
+}
+
 #logo {
   width: 230px;
 }

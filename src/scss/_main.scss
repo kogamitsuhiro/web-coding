@@ -1,8 +1,13 @@
 @import '_variables';
+@import '_mixin';
 
 header {
   padding:10px;
   background:$yellow;
+  // mixinの使い方は以下↓
+  @include sp {
+    background-color: red;
+  };
 }
 
 #logo {
