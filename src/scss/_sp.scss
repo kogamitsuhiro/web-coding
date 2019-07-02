@@ -1,0 +1,7 @@
+@import '_variables';
+
+@media screen and (max-width: $break-point) {
+  header {
+    font-size: 1.4rem;
+  }
+}

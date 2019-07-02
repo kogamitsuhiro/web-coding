@@ -1,0 +1,12 @@
+// breakpoint
+$break-point: 768px;  // 一般的なbreak point
+
+// 細かくbreak pointを分ける場合は以下を使用
+$sp: 480px;           // SP
+$tab: 600px;          // タブレット
+$small-pc: 960px;     // 小型PC
+$big-pc: 1280px;      // 大型PC
+
+// color
+$black: #333;
+$yellow: #FFDD00;

@@ -12,6 +12,7 @@ var pngquant = require('imagemin-pngquant');
 var mozjpeg = require('imagemin-mozjpeg');
 var ejs = require("gulp-ejs");
 var rename = require("gulp-rename"); //.ejsの拡張子を変更
+var replace = require("gulp-replace"); //distの上の空白を削除
 
 // scssのコンパイル
 gulp.task('sass', function() {
@@ -57,6 +58,7 @@ gulp
 .pipe( plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }) )//エラーチェック
 .pipe(ejs({}, {}, { ext: '.html' })) //ejsを纏める
 .pipe(rename({extname: ".html"})) //拡張子をhtmlに
+.pipe(replace(/[\s\S]*?(<!DOCTYPE)/, "$1"))
 .pipe(gulp.dest("./")); //出力先
 done();
 });
@@ -66,7 +68,7 @@ gulp.task( 'watch', function(done) {
 gulp.watch( './src/scss/**/*.scss', gulp.task('sass') ); //sassが更新されたらgulp sassを実行
 gulp.watch('./src/scss/**/*.scss', gulp.task('bs-reload')); //sassが更新されたらbs-reloadを実行
 gulp.watch( './src/js/*.js', gulp.task('bs-reload') ); //jsが更新されたらbs-relaodを実行
-gulp.watch( './index.html', gulp.task('bs-reload') ); //htmlが更新されたらbs-relaodを実行
+gulp.watch( './*.html', gulp.task('bs-reload') ); //jsが更新されたらbs-relaodを実行
 gulp.watch('./ejs/**/*.ejs',gulp.task('ejs') ) ; //ejsが更新されたらgulp-ejsを実行
 gulp.watch('./ejs/**/*.ejs',gulp.task('bs-reload') ) ; //ejsが更新されたらbs-reloadを実行
 });
